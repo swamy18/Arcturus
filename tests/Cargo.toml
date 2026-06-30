@@ -1,0 +1,34 @@
+[package]
+name = "arcturus-tests"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# Mock hardware and test utilities
+rand = { version = "0.8", features = ["small_rng"] }
+approx = "0.5"
+proptest = "1.4"
+
+# We include the firmware as a library for testing
+[dependencies.arcturus-firmware]
+path = "../firmware"
+
+[[test]]
+name = "test_frobenius_norm"
+path = "firmware/test_frobenius_norm.rs"
+
+[[test]]
+name = "test_alpha_dead_zone"
+path = "firmware/test_alpha_dead_zone.rs"
+
+[[test]]
+name = "test_time_reversibility"
+path = "firmware/test_time_reversibility.rs"
+
+[[test]]
+name = "test_edge_cache"
+path = "firmware/test_edge_cache.rs"
+
+[[test]]
+name = "test_security"
+path = "firmware/test_security.rs"

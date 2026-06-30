@@ -1,0 +1,30 @@
+[package]
+name = "arcturus-firmware"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[dependencies]
+embedded-hal = { workspace = true }
+nb = { workspace = true }
+panic-halt = { workspace = true }
+heapless = { workspace = true }
+libm = { workspace = true }
+
+# RISC-V specific dependencies (targeting RV64GC)
+riscv = { workspace = true }
+riscv-rt = { workspace = true }
+
+[dependencies.embedded-alloc]
+version = "0.6"
+optional = true
+
+[features]
+default = ["alloc"]
+alloc = ["embedded-alloc"]
+psram = []
+
+[[bin]]
+name = "arcturus-firmware"
+path = "src/main.rs"

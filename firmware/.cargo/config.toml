@@ -1,0 +1,17 @@
+[target.riscv64gc-unknown-none-elf]
+runner = "riscv64-unknown-elf-gdb -q -x openocd.gdb"
+linker = "rust-lld"
+rustflags = [
+  "-C", "link-arg=-Tmemory.x",
+  "-C", "link-arg=-Tlink.x",
+  "-C", "linker=rust-lld",
+  "-C", "link-arg=--nmagic",
+  "-C", "link-arg=-ebiscv64",
+  "-C", "target-feature=+m,+a,+f,+d,+c",
+]
+
+[build]
+target = "riscv64gc-unknown-none-elf"
+
+[env]
+DEFMT_LOG = "debug"

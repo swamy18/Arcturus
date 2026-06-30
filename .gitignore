@@ -1,0 +1,13 @@
+target/
+**/__pycache__/
+*.pyc
+*.awm
+*.pt
+*.bin
+*.safetensors
+*.manifest.json
+pc/arcturus_compiler/gpt2_banked_bank000.awm
+pc/arcturus_compiler/gpt2_banked_bank001.awm
+pc/arcturus_compiler/tiny_test_cli.awm
+pc/arcturus_compiler/tiny_test_manual.awm
+pc/arcturus_compiler/tiny_test.pt

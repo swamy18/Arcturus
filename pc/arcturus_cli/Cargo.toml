@@ -1,0 +1,22 @@
+[package]
+name = "arcturus-cli"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "arcturus-cli"
+path = "src/main.rs"
+
+[dependencies]
+clap = { workspace = true }
+serialport = { workspace = true }
+thiserror = { workspace = true }
+anyhow = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+tokio = { version = "1.35", features = ["full"] }
+
+[dev-dependencies]
+tempfile = "3.9"
