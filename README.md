@@ -11,6 +11,9 @@ CMOS device with a Bismuthene topological layer, sparse relational memory, and a
 execution model. The project combines bare-metal Rust firmware, a host-side control CLI, and a Python compiler
 that maps modern PyTorch/HuggingFace models into the chip's `W` matrix format.
 
+This repository contains the open-source software/firmware stack for the Arcturus chip. The proprietary
+mathematical framework and physical chip layout (GDS) are not included in this public repository.
+
 At the firmware level, Arcturus implements graph Laplacian dynamics, Krylov-style unitary evolution,
 Frobenius-norm lock, time-travel bank storage, eigenmode access, and an edge cache for ultra-fast local state.
 On the host side, the ecosystem provides the tooling needed to load models, compress them, serialize them to
